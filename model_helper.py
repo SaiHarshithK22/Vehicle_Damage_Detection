@@ -53,7 +53,7 @@ def predict(image_path):
         trained_model = CarClassifierResNet()
         # map_location ensures the model loads correctly on CPU-only machines
         trained_model.load_state_dict(
-            torch.load(MODEL_PATH, map_location=torch.device('cpu'))
+            torch.load(MODEL_PATH, map_location=torch.device('cpu'), weights_only=True)
         )
         trained_model.eval()
 
